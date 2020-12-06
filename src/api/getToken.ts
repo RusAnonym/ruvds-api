@@ -5,7 +5,12 @@ export default async function getToken(params: {
 	username: string;
 	password: string;
 	endless?: boolean;
-}) {
+}): Promise<{
+	rejectReason: number;
+	errMessage?: string;
+	sessionToken: string;
+	expire: string | null;
+}> {
 	params.endless = params.endless || false;
 	return await callMethod("logon", {
 		key: params.key,
