@@ -1,11 +1,15 @@
+import {
+	GetTariffRequestParams,
+	GetTariffResponseParams,
+} from "./../types/getTariff";
 import { callMethod } from "../lib/core";
 
-export default async function getToken(params): Promise<number> {
-	params.endless = params.endless || false;
-	return await callMethod("logon", {
-		key: params.key,
-		username: params.username,
-		password: params.password,
-		endless: params.endless ? 1 : 0,
+export default async function getTariff(
+	params: GetTariffRequestParams,
+): Promise<GetTariffResponseParams> {
+	return await callMethod("tariff", {
+		sessionToken: params.sessionToken,
+		tariffIds: params.tariffIds.join(),
+		driveTariffIds: params.driveTariffIds.join(),
 	});
 }
