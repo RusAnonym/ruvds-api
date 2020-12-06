@@ -1,0 +1,7 @@
+{
+  "name": "ruvds-api",
+  "version": "1.0.0",
+  "description": "Powerful Node.js module that allows you to easily interact with the API RUVDS",
+  "main": "main.js",
+  "license": "MIT"
+}
