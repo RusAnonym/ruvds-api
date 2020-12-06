@@ -1,25 +1,12 @@
+import {
+	GetBalanceResponseParams,
+	GetBalanceRequestParams,
+} from "./../types/getBalance";
 import { callMethod } from "../lib/core";
 
-export default async function getBalance(params: {
-	sessionToken: string;
-	details?: boolean;
-}): Promise<{
-	rejectReason: number;
-	errMessage?: string;
-	amount: number;
-	currency: number;
-	details?: {
-		income: number;
-		debited: number;
-		items: Array<{
-			type: number;
-			dt: string;
-			amount: number;
-			currency: number;
-			description: string;
-		}>;
-	};
-}> {
+export default async function getBalance(
+	params: GetBalanceRequestParams,
+): Promise<GetBalanceResponseParams> {
 	params.details = params.details || false;
 	return await callMethod("balance", {
 		sessionToken: params.sessionToken,

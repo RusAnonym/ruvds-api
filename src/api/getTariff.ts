@@ -1,12 +1,6 @@
-import {
-	GetTokenRequestParams,
-	GetTokenResponseParams,
-} from "./../types/getToken";
 import { callMethod } from "../lib/core";
 
-export default async function getToken(
-	params: GetTokenRequestParams,
-): Promise<GetTokenResponseParams> {
+export default async function getToken(params): Promise<number> {
 	params.endless = params.endless || false;
 	return await callMethod("logon", {
 		key: params.key,
