@@ -5,7 +5,8 @@ import getDatacenter from "./api/getDatacenter";
 import getTariff from "./api/getTariff";
 import getOs from "./api/getOs";
 import serverGet from "./api/server/get";
+import serverStat from "./api/server/stat";
 
-const server = { serverGet };
+const server = { serverGet, serverStat };
 
 export { core, getToken, getBalance, getDatacenter, getTariff, getOs, server };
