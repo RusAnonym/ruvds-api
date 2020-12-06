@@ -21,7 +21,7 @@ export default async function getBalance(params: {
 	};
 }> {
 	params.details = params.details || false;
-	return await callMethod("logon", {
+	return await callMethod("balance", {
 		sessionToken: params.sessionToken,
 		details: params.details ? 1 : 0,
 	});
