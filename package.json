@@ -1,7 +1,19 @@
 {
-  "name": "ruvds-api",
-  "version": "1.0.0",
-  "description": "Powerful Node.js module that allows you to easily interact with the API RUVDS",
-  "main": "main.js",
-  "license": "MIT"
+	"name": "ruvds-api",
+	"version": "1.0.0",
+	"description": "Powerful Node.js module that allows you to easily interact with the API RUVDS",
+	"main": "./out/cjs/main.js",
+	"module": "./out/main.js",
+	"files": [
+		"out/"
+	],
+	"directories": {
+		"out": "out"
+	},
+	"scripts": {
+		"build": "tsc -p tsconfig.json && tsc -p tsconfig-cjs.json",
+		"prepublish": "yarn build",
+		"test": "yarn build && node test"
+	},
+	"license": "MIT"
 }
