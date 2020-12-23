@@ -1,6 +1,6 @@
 {
 	"name": "ruvds-api",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"description": "Powerful Node.js module that allows you to easily interact with the API RUVDS",
 	"main": "./out/cjs/main.js",
 	"module": "./out/main.js",
